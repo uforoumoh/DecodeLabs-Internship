@@ -46,6 +46,20 @@ group by ReferralSource
 order by revenue DESC
 --instagram
 
+--which coupon code brings the most customers
+select CouponCode, sum(TotalPrice) as revenue
+from data
+group by CouponCode
+order by revenue DESC
+--FREESHIP
+
+--most popular payment method
+select PaymentMethod, count(TotalPrice) as users
+from data
+group by PaymentMethod
+order by users DESC
+--Online
+
 --what is the total revenue
 select sum(totalprice) as totalrevenue
 from data
